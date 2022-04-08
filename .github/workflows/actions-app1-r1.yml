@@ -1,0 +1,13 @@
+name: actions-app1-r1
+on: [workflow_dispatch]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: 'app1-release1'
+          #path: 'cfuntion/app2'
+      - run: ls cfuntion/app1/
+      - run: tree
+      - run: cat cfuntion/app1/readme.txt
