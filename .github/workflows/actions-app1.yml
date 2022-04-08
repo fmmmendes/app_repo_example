@@ -8,5 +8,6 @@ jobs:
         with:
           ref: 'app1-release0'
           path: 'cfuntion/app1'
-      - run: ls
+      - run: ls cfuntion/app1/
+      - run: tree
       - run: cat cfuntion/app1/readme.txt
