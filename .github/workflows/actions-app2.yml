@@ -1,0 +1,13 @@
+name: actions-app2
+on: [workflow_dispatch]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: 'app2-release0'
+          path: 'cfuntion/app2'
+      - run: ls cfuntion/app2/
+      - run: tree
+      - run: cat cfuntion/app2/readme.txt
