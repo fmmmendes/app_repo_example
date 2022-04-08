@@ -1,1 +1,1 @@
-This is app 1, relase 0
+This is app 1, relase 1
