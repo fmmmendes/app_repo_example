@@ -1,5 +1,11 @@
 name: actions-app1
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'Insert the SHA or Tag of the commit'     
+        required: true
+        default: 'master'
 jobs:
   list-info:
     runs-on: ubuntu-latest
