@@ -1,13 +1,18 @@
 name: actions-app1
 on: [workflow_dispatch]
 jobs:
-  check-bats-version:
+  list-info:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ./cfuntion/app1/
+    defaults:
+      run:
+        working-directory: ./cfuntion/app1/
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 'app1-release0'
+          ref: 'app1-release3'
           #path: 'cfuntion/app1'
-      - run: ls cfuntion/app1/
+      - run: ls 
       - run: tree
-      - run: cat cfuntion/app1/readme.txt
+      - run: cat readme.txt
