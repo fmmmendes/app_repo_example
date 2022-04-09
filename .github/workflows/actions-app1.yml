@@ -16,3 +16,10 @@ jobs:
       - run: ls 
       - run: tree
       - run: cat readme.txt
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python3 -m pytest
+
