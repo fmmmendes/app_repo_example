@@ -2,7 +2,7 @@ name: actions-app1
 on: 
   workflow_dispatch:
     inputs:
-      commit_sha:
+      commit_ref:
         description: 'Insert the SHA or Tag of the commit'     
         required: true
         default: 'master'
@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 'app1-release3'
-          #path: 'cfuntion/app1'
+          #ref: 'app1-release3'
+          ref: '${{ github.event.inputs.commit_ref }}'
       - run: ls 
       - run: tree
       - run: cat readme.txt
